@@ -14,26 +14,20 @@ export function mapSystem(layer: PhaserLayer) {
         },
     } = layer;
 
-    for (let x = 0; x < 50; x++) {
-        for (let y = 0; y < 50; y++) {
-            const coord = { x, y };
-            const noiseInput = [x / MAP_AMPLITUDE, 0, y / MAP_AMPLITUDE];
-            // Get a noise value between 0 and 100
-            const seed = Math.floor(((snoise(noiseInput) + 1) / 2) * 100);
+    const tiles = [24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24,
+        24, 24, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 24, 24,
+        24, 24, 10, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 12, 24, 24,
+        24, 24, 10, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 12, 24, 24,
+        24, 24, 10, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 12, 24, 24,
+        24, 24, 10, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 12, 24, 24,
+        24, 24, 10, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 12, 24, 24,
+        24, 24, 10, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 12, 24, 24,
+        24, 24, 10, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 12, 24, 24,
+        24, 24, 10, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 12, 24, 24,
+        24, 24, 20, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 22, 24, 24,
+    ];
 
-            if (seed > 70) {
-                // This would be the highest 'elevation'
-                putTileAt(coord, Tileset.Sea, "Foreground");
-            } else if (seed > 60) {
-                // Even lower, could be fields or plains
-                putTileAt(coord, Tileset.Desert, "Foreground");
-            } else if (seed > 53) {
-                // Close to water level, might be beach
-                putTileAt(coord, Tileset.Forest, "Foreground");
-            } else {
-                // Below a certain threshold, it is sea
-                putTileAt(coord, Tileset.Land, "Foreground");
-            }
-        }
-    }
+    for (let i = 0; i < tiles.length; i++) putTileAt({ x: Math.floor(i % 24), y: Math.floor(i / 24) }, tiles[i], "Foreground")
+
+
 }
