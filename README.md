@@ -1,2 +1,2 @@
 # Adjust-Adventure
-A full on-chain game on Starknet
+A full on-chain game on Starknet (unfinished)
