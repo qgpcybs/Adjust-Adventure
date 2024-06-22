@@ -32,7 +32,9 @@ export const ImagePaths: { [key in RPSSprites]: string } = {
 
 export enum Assets {
     MainAtlas = "MainAtlas",
-    Tileset = "Tileset",
+    Tileset_Water = "Tileset_Water",
+    Tileset_Tilemap_Flat = "Tileset_Tilemap_Flat",
+    
 }
 
 export enum Direction {
@@ -43,8 +45,8 @@ export enum Direction {
     Right,
 }
 
-export const TILE_HEIGHT = 32;
-export const TILE_WIDTH = 32;
+export const TILE_HEIGHT = 64;
+export const TILE_WIDTH = 64;
 
 // contract offset so we don't overflow
 export const ORIGIN_OFFSET = 100;

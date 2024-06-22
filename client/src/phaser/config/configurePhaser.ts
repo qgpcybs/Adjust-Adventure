@@ -27,8 +27,8 @@ const mainMap = defineMapConfig({
     tileAnimations: TileAnimations,
     layers: {
         layers: {
-            Background: { tilesets: ["Default"] },
-            Foreground: { tilesets: ["Default"] },
+            Background: { tilesets: ['Water'] },
+            Foreground: { tilesets: ['Water', 'Tilemap_Flat'] },
         },
         defaultLayer: "Background",
     },
@@ -38,10 +38,15 @@ export const phaserConfig = {
     sceneConfig: {
         [Scenes.Main]: defineSceneConfig({
             assets: {
-                [Assets.Tileset]: {
+                [Assets.Tileset_Water]: {
                     type: AssetType.Image,
-                    key: Assets.Tileset,
-                    path: "assets/tilesets/land.png",
+                    key: Assets.Tileset_Water,
+                    path: "assets/tilesets/Water.png",
+                },
+                [Assets.Tileset_Tilemap_Flat]: {
+                    type: AssetType.Image,
+                    key: Assets.Tileset_Tilemap_Flat,
+                    path: "assets/tilesets/Tilemap_Flat.png",
                 },
                 [Assets.MainAtlas]: {
                     type: AssetType.MultiAtlas,
@@ -95,8 +100,13 @@ export const phaserConfig = {
                 },
             ],
             tilesets: {
-                Default: {
-                    assetKey: Assets.Tileset,
+                Water: {
+                    assetKey: Assets.Tileset_Water,
+                    tileWidth: TILE_WIDTH,
+                    tileHeight: TILE_HEIGHT,
+                },
+                Tilemap_Flat: {
+                    assetKey: Assets.Tileset_Tilemap_Flat,
                     tileWidth: TILE_WIDTH,
                     tileHeight: TILE_HEIGHT,
                 },
