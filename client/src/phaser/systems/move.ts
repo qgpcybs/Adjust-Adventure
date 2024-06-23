@@ -7,7 +7,8 @@ import {
 } from "@dojoengine/recs";
 import { PhaserLayer } from "../createPhaserLayer";
 import { tileCoordToPixelCoord } from "@latticexyz/phaserx";
-import { Animations, TILE_HEIGHT, TILE_WIDTH } from "../config/constants";
+import { Assets, TILE_HEIGHT, TILE_WIDTH } from "../config/constants";
+import { Data } from "../config/data";
 
 export const move = (layer: PhaserLayer) => {
     const {
@@ -26,16 +27,24 @@ export const move = (layer: PhaserLayer) => {
         console.log(playerObj);
 
         playerObj.setComponent({
-            id: "animation",
-            once: (sprite: any) => {
-                console.log(sprite);
-                sprite.play(Animations.RockIdle);
-            },
-        });
+            id: 'texture', once: (sprite: any) => {
+                console.log("sprite:", sprite);
+                sprite.setTexture(Assets.Warrior_Blue)
+            }
+        })
+
+        // playerObj.setComponent({
+        //     id: "animation",
+        //     once: (sprite: any) => {
+        //         console.log(sprite);
+        //         sprite.play(Animations.RockIdle);
+        //     },
+        // });
     });
 
     defineSystem(world, [Has(Position)], ({ entity }: any) => {
-        console.log(entity);
+        console.log('entity:', entity);
+        Data.playerEntity = entity;
 
         const position = getComponentValueStrict(
             Position,
@@ -57,6 +66,7 @@ export const move = (layer: PhaserLayer) => {
             once: (sprite: any) => {
                 sprite.setPosition(pixelPosition?.x, pixelPosition?.y);
                 camera.centerOn(pixelPosition?.x, pixelPosition?.y);
+                Data.canMove = true;
             },
         });
     });

@@ -16,6 +16,7 @@ export enum Animations {
 
 export enum Sprites {
     Soldier,
+    Warrior_Blue
 }
 
 export enum RPSSprites {
@@ -34,7 +35,8 @@ export enum Assets {
     MainAtlas = "MainAtlas",
     Tileset_Water = "Tileset_Water",
     Tileset_Tilemap_Flat = "Tileset_Tilemap_Flat",
-    
+    Warrior_Blue = 'Warrior_Blue'
+
 }
 
 export enum Direction {
