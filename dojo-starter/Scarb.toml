@@ -20,10 +20,10 @@ dojo = { git = "https://github.com/dojoengine/dojo", tag = "v0.7.1" }
 initializer_class_hash = "0xbeef"
 
 [tool.dojo.env]
-rpc_url = "http://localhost:5050/"
+rpc_url = "https://api.cartridge.gg/x/7stars2/katana"
 # Default account for katana with seed = 0
-account_address = "0xb3ff441a68610b30fd5e2abbf3a1548eb6ba6f3559f2862bf2dc757e5828ca"
-private_key = "0x2bbf4f9fd0bbb2e60b0316c1fe0b76cf7a4d0198bd493ced9b8df2a3a24d68a"
+account_address = "0x5c61800296f9045154983b5fe4edb73ae35fda2af2d9e71638c89ae9d8ebc86"
+private_key = "0x1ed5be6078e05632b91edc1deb7b56b460b75d44463e62ab619a560f9dfb2f8"
 world_address = "0xb4079627ebab1cd3cf9fd075dda1ad2454a7a448bf659591f259efa2519b18"  # Uncomment and update this line with your world address.
 
 [tool.dojo.world]
