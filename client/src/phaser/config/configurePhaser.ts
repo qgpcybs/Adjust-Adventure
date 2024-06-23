@@ -57,11 +57,21 @@ export const phaserConfig = {
                         imagePath: "assets/atlases/",
                     },
                 },
+                [Assets.Warrior_Blue]: {
+                    type: AssetType.Image,
+                    key: Assets.Warrior_Blue,
+                    path: 'assets/Warrior_Blue.png'
+
+                }
             },
             maps: {
                 [Maps.Main]: mainMap,
             },
             sprites: {
+                [Sprites.Warrior_Blue]: {
+                    assetKey: Assets.Warrior_Blue,
+
+                },
                 [Sprites.Soldier]: {
                     assetKey: Assets.MainAtlas,
                     frame: "sprites/soldier/idle/0.png",

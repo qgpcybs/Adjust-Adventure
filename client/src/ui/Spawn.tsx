@@ -34,7 +34,7 @@ export const Spawn = () => {
                     setLoggedIn();
                 }}
             >
-                Spawn
+                Spawn your soldier
             </Button>
         </div>
     );
